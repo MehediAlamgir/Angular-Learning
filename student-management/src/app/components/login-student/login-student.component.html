@@ -1,0 +1,23 @@
+<h3 class="heading">Login</h3>
+
+<div class="d-flex justify-content-center">
+  <div *ngIf="message" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>{{isValid}} User! </strong>Login {{isSuccess}}.
+    <button (click)="removeMessage()" type="button" class="btn-close" data-bs-dismiss="alert"
+      aria-label="Close"></button>
+  </div>
+</div>
+
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form" class="student-login-form">
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" placeholder="Enter Email" formControlName="email">
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" placeholder="Enter Password" formControlName="password">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>

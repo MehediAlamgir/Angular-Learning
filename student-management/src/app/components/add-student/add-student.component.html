@@ -1,0 +1,75 @@
+<h3 class="heading">Add Student</h3>
+
+<div class="d-flex justify-content-center">
+  <div *ngIf="isSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Success!</strong> {{successMessage}}
+    <button (click)="removeMessage()" type="button" class="btn-close" data-bs-dismiss="alert"
+      aria-label="Close"></button>
+  </div>
+</div>
+
+<form [formGroup]="addStudent" (ngSubmit)="onSubmit()" class="student-registration-form">
+  <div class="mb-3">
+    <label for="firstName" class="form-label">First Name</label>
+    <input type="text" class="form-control" placeholder="Enter First Name" formControlName="firstName">
+    <span *ngIf="submitted && formControls.firstName.errors" class="error-message">First Name is required</span>
+  </div>
+  <div class="mb-3">
+    <label for="lastName" class="form-label">Last Name</label>
+    <input type="text" class="form-control" placeholder="Enter Last Name" formControlName="lastName">
+    <span *ngIf="submitted && formControls.lastName.errors" class="error-message">Last Name is required</span>
+  </div>
+  <div class="mb-3">
+    <label for="gender" class="form-label">Gender</label>
+    <select class="form-select" formControlName="gender">
+      <option value="">Select Gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <span *ngIf="submitted && formControls.gender.errors" class="error-message">Gender is required</span>
+  </div>
+  <div class="mb-3">
+    <label for="dateOfBirth" class="form-label">Date of Birth</label>
+    <input type="date" class="form-control" formControlName="dateOfBirth">
+    <span *ngIf="submitted && formControls.dateOfBirth.errors" class="error-message">Date of Birth is required</span>
+  </div>
+
+  <div class="mb-3">
+    <label for="gender" class="form-label">Type &nbsp; &nbsp;</label>
+    <span>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" id="domestic" name="type" value="domestic" formControlName="type">
+        <label class="form-check-label" for="domestic">Domestic</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" id="international" name="type" value="international"
+          formControlName="type">
+        <label class="form-check-label" for="international">International</label>
+      </div>
+    </span>
+    <span *ngIf="submitted && formControls.gender.errors" class="error-message">Type is required</span>
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" placeholder="Enter Email" formControlName="email">
+    <span *ngIf="submitted && formControls.email.errors" class="error-message">Email is required and must be
+      valid</span>
+  </div>
+
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" placeholder="Enter Password" formControlName="password">
+    <span *ngIf="submitted && formControls.password.errors" class="error-message">Password must be at least 4 characters
+      with 1 upeercase and 1 lowercase character</span>
+  </div>
+
+  <div class="mb-3">
+    <label for="confirmPassword" class="form-label">Confirm Password</label>
+    <input type="password" class="form-control" placeholder="Confirm Password" formControlName="confirmPassword">
+    <span *ngIf="submitted && formControls.confirmPassword.errors" class="error-message">Password didn't match</span>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

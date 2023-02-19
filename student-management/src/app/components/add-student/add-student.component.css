@@ -1,0 +1,18 @@
+.heading {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.student-registration-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+}

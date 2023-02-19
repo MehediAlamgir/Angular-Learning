@@ -1,0 +1,88 @@
+{
+  "students": [
+    {
+      "firstName": "Mehedi",
+      "lastName": "Alamgir",
+      "gender": "male",
+      "dateOfBirth": "2023-02-21",
+      "email": "ma@gmail.com",
+      "type": "domestic",
+      "id": 22
+    },
+    {
+      "firstName": "Safayet",
+      "lastName": "Mansur",
+      "gender": "male",
+      "dateOfBirth": "2023-02-22",
+      "email": "sm@gmail.com",
+      "password": "qQ12",
+      "confirmPassword": "qQ12",
+      "type": "international",
+      "id": 23
+    },
+    {
+      "firstName": "Amir",
+      "lastName": "Hamza",
+      "gender": "male",
+      "dateOfBirth": "2023-02-15",
+      "email": "ah@yahoo.com",
+      "password": "aA12",
+      "confirmPassword": "aA12",
+      "type": "international",
+      "id": 24
+    },
+    {
+      "firstName": "Harun ",
+      "lastName": "Rashid",
+      "gender": "male",
+      "dateOfBirth": "2021-06-08",
+      "email": "hr@hotmail.com",
+      "password": "aA12",
+      "confirmPassword": "aA12",
+      "type": "domestic",
+      "id": 25
+    },
+    {
+      "firstName": "Tahmina",
+      "lastName": "Tasnim",
+      "gender": "female",
+      "dateOfBirth": "2023-02-22",
+      "email": "tasnim@gmail.com",
+      "password": "zAq1",
+      "confirmPassword": "zAq1",
+      "type": "domestic",
+      "id": 26
+    },
+    {
+      "firstName": "Mohammed",
+      "lastName": "Ashraf",
+      "gender": "male",
+      "dateOfBirth": "1980-05-07",
+      "email": "md@gmail.com",
+      "password": "qQ12",
+      "confirmPassword": "qQ12",
+      "type": "international",
+      "id": 27
+    },
+    {
+      "firstName": "Sardar",
+      "lastName": "Moktadir",
+      "gender": "male",
+      "dateOfBirth": "2023-02-18",
+      "email": "sm@gmail.com",
+      "password": "qQ12",
+      "confirmPassword": "qQ12",
+      "type": "international",
+      "id": 28
+    },
+    {
+      "firstName": "Habibul",
+      "lastName": "Bashar",
+      "gender": "male",
+      "dateOfBirth": "2023-02-08",
+      "email": "hb@gmail.com",
+      "type": "international",
+      "id": 29
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+.heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.table {
+    width: 100%;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.table th {
+    background-color: #f2f2f2;
+    text-transform: uppercase;
+    border: 1px solid #ddd;
+}
+
+.table td {
+    border: 1px solid #ddd;
+}
