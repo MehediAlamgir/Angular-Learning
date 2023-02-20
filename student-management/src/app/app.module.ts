@@ -10,6 +10,7 @@ import { LoginStudentComponent } from './components/login-student/login-student.
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AddStudentComponent,
     EditStudentComponent,
     ListStudentComponent,
-    LoginStudentComponent
+    LoginStudentComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
