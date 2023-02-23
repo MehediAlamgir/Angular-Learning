@@ -30,11 +30,11 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginStudentComponent
-  },
-  {
+  }
+  /*{
     path:"**",
     component:PageNotFoundComponent
-  }
+  }*/
 ];
 
 @NgModule({

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,13 @@ export class StudentsService {
 
   getStudentByEmail(email: any) {
     return this.http.get('http://localhost:3000/users?students=' + email);
+  }
+
+  private isValidSource = new BehaviorSubject<boolean>(false);
+  isValidUser = this.isValidSource.asObservable();
+
+  setIsValid(isValid: boolean) {
+    this.isValidSource.next(isValid);
   }
 
 }

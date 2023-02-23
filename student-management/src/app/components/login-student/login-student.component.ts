@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { StudentsService } from '../../students.service';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-login-student',
@@ -8,14 +9,20 @@ import { StudentsService } from '../../students.service';
   styleUrls: ['./login-student.component.css']
 })
 export class LoginStudentComponent {
-  constructor(private student: StudentsService) { }
+  constructor(private student: StudentsService, private router:Router) { }
+  ngOnInit(): void {
+    this.student.setIsValid(false);
+  }
   studentData: any = [];
   message: boolean = false;
   isValid: any = '';
   isSuccess: any = '';
 
+  @Output() dataSent = new EventEmitter<string>();
+
   submitted = false;
   errorMessage: string | undefined;
+
 
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -40,10 +47,14 @@ export class LoginStudentComponent {
         console.log("Valid User");
         this.isValid = "Valid";
         this.isSuccess = "Successfull";
+        this.student.setIsValid(true);
+
+        this.router.navigate(['list']);
       }
       else {
         this.isValid = "Invalid";
         this.isSuccess = "Failed";
+        this.student.setIsValid(false);
         console.log("Invalid User: " + this.isValid);
       }
 
