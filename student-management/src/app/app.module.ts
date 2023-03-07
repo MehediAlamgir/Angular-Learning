@@ -9,8 +9,9 @@ import { ListStudentComponent } from './components/list-student/list-student.com
 import { LoginStudentComponent } from './components/login-student/login-student.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -19,14 +20,16 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     EditStudentComponent,
     ListStudentComponent,
     LoginStudentComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

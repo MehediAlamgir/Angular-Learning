@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentsService } from '../../students.service';
 
+
 @Component({
   selector: 'app-list-student',
   templateUrl: './list-student.component.html',
@@ -9,6 +10,7 @@ import { StudentsService } from '../../students.service';
 export class ListStudentComponent {
   constructor(private student: StudentsService) { }
   studentData: any = [];
+  searchText: string = '';
 
   ngOnInit(): void {
     this.student.getAllStudent().subscribe((allData) => {
@@ -23,5 +25,10 @@ export class ListStudentComponent {
       console.log(result);
       this.ngOnInit();
     });
+  }
+
+  onSearchTextEntered(searchValue: string) {
+    this.searchText = searchValue;
+    //console.log("searchValue: "+this.searchText);
   }
 }
