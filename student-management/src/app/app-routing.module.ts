@@ -8,6 +8,17 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 const routes: Routes = [
   {
+    //Default route. In this case component name will not show in url. only root url will show
+    path: '',
+    component: LoginStudentComponent
+  },
+  /*{
+    //Default route with redirect. In this case component name will show in url
+    path:'',
+    redirectTo:'login',
+    pathMatch:'full'
+  }, */
+  {
     path: 'add',
     component: AddStudentComponent
 
@@ -30,11 +41,11 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginStudentComponent
-  }
-  /*{
+  },
+  {
     path:"**",
     component:PageNotFoundComponent
-  }*/
+  }
 ];
 
 @NgModule({
