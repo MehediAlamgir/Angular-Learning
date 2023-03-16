@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SearchComponent } from './search/search.component';
+import { StudentGuardService } from './student-guard.service';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { SearchComponent } from './search/search.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [StudentGuardService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

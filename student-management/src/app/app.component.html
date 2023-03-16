@@ -23,7 +23,7 @@
 
 
 <div class="d-flex justify-content-end" *ngIf="isLoggedIn">
-  <button type="button" class="btn btn-danger me-3" routerLink="login">Logout</button>
+  <button type="button" class="btn btn-danger me-3" (click)="logout()">Logout</button>
 </div>
 
 

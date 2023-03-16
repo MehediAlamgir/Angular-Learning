@@ -5,6 +5,7 @@ import { EditStudentComponent } from './components/edit-student/edit-student.com
 import { ListStudentComponent } from './components/list-student/list-student.component';
 import { LoginStudentComponent } from './components/login-student/login-student.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { StudentGuardService } from './student-guard.service';
 
 const routes: Routes = [
   {
@@ -36,7 +37,8 @@ const routes: Routes = [
   },
   {
     path: 'list',
-    component: ListStudentComponent
+    component: ListStudentComponent,
+    canActivate: [StudentGuardService]
   },
   {
     path: 'login',
