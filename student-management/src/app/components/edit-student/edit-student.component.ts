@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { StudentsService } from '../../students.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-student',
@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./edit-student.component.css']
 })
 export class EditStudentComponent {
-  constructor(private student: StudentsService, private router: ActivatedRoute) { }
+  constructor(private student: StudentsService, private router: ActivatedRoute, private routerNavigation:Router) { }
 
   editStudent = new FormGroup({
     firstName: new FormControl('', Validators.required),
@@ -54,6 +54,8 @@ export class EditStudentComponent {
         this.submitted = false;
         this.successMessage = "Student Data Updated."
       })
+
+      this.routerNavigation.navigate(['list']);
   }
 
   removeMessage() {
