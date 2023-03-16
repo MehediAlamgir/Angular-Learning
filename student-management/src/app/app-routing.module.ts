@@ -33,7 +33,8 @@ const routes: Routes = [
   },
   {
     path: 'edit/:id',
-    component: EditStudentComponent
+    component: EditStudentComponent,
+    canActivate: [StudentGuardService]
   },
   {
     path: 'list',
