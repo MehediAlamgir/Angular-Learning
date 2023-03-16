@@ -1,5 +1,14 @@
+import { BehaviorSubject } from "rxjs";
+
 export class AuthService {
-    loggedIn: boolean = false;
+    private loggedIn: boolean = false;
+
+    private isValidSource = new BehaviorSubject<boolean>(false);
+    isValidUser = this.isValidSource.asObservable();
+
+    setIsValid(isValid: boolean) {
+      this.isValidSource.next(isValid);
+    }
 
     login(){
         this.loggedIn = true;
@@ -12,4 +21,5 @@ export class AuthService {
     isAuthenticated() {
         return this.loggedIn;
     }
+
 }

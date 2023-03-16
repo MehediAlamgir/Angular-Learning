@@ -15,7 +15,7 @@ export class AppComponent {
   constructor(private dataService: StudentsService, private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
-    this.dataService.isValidUser.subscribe(isValid => {
+    this.authService.isValidUser.subscribe(isValid => {
       this.isLoggedIn = isValid;
     });
   }

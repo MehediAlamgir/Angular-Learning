@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/auth.service';
 export class LoginStudentComponent {
   constructor(private student: StudentsService, private router:Router, private authService: AuthService) { }
   ngOnInit(): void {
-    this.student.setIsValid(false);
+    this.authService.setIsValid(false);
   }
   studentData: any = [];
   message: boolean = false;
@@ -48,7 +48,7 @@ export class LoginStudentComponent {
         console.log("Valid User");
         this.isValid = "Valid";
         this.isSuccess = "Successfull";
-        this.student.setIsValid(true);
+        this.authService.setIsValid(true);
         this.authService.login();
 
         this.router.navigate(['list']);
@@ -56,7 +56,7 @@ export class LoginStudentComponent {
       else {
         this.isValid = "Invalid";
         this.isSuccess = "Failed";
-        this.student.setIsValid(false);
+        this.authService.setIsValid(false);
         console.log("Invalid User: " + this.isValid);
       }
 
