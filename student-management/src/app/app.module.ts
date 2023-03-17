@@ -14,6 +14,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { SearchComponent } from './search/search.component';
 import { StudentGuardService } from './student-guard.service';
 import { AuthService } from './auth.service';
+import { CanDeactivateGuardService } from './candeactivate-guard.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { AuthService } from './auth.service';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [StudentGuardService, AuthService],
+  providers: [StudentGuardService, AuthService, CanDeactivateGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

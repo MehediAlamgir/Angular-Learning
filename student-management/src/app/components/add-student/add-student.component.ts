@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import { IDeactivateComponent } from '../../candeactivate-guard.service';
 
 import { StudentsService } from '../../students.service';
 
@@ -8,7 +9,7 @@ import { StudentsService } from '../../students.service';
   templateUrl: './add-student.component.html',
   styleUrls: ['./add-student.component.css']
 })
-export class AddStudentComponent {
+export class AddStudentComponent implements IDeactivateComponent{
 
   constructor(private student: StudentsService) { }
   addStudent = new FormGroup({
@@ -71,6 +72,23 @@ export class AddStudentComponent {
     console.log("control.value: " + control.value);
     console.log("password.value: " + (password ? password.value : null));
     return password && control.value !== password.value ? { 'confirmPassword': true } : null;
+  }
+
+  canExit(){
+    /*console.log("firstName: "+this.formControls.firstName.value+" lastName: "+ this.formControls.lastName.value+" gender: "+ this.formControls.gender.value+
+                " dateOfBirth: "+this.formControls.dateOfBirth.value+" type: "+ this.formControls.type.value+" email: "+this.formControls.email.value+
+                "password: "+this.formControls.password.value+" confirmPassword: "+this.formControls.confirmPassword.value);
+    */
+    if (this.formControls.firstName.value || this.formControls.lastName.value || this.formControls.gender.value ||
+      this.formControls.dateOfBirth.value || this.formControls.type.value || this.formControls.email.value ||
+      this.formControls.password.value || this.formControls.confirmPassword.value)
+    {
+      return confirm('You have unsaved chnages. Do you want to discard these change?');
+    }
+    else{
+      return true;
+    }
+
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CanDeactivateGuardService } from './candeactivate-guard.service';
 import { AddStudentComponent } from './components/add-student/add-student.component';
 import { EditStudentComponent } from './components/edit-student/edit-student.component';
 import { ListStudentComponent } from './components/list-student/list-student.component';
@@ -21,7 +22,8 @@ const routes: Routes = [
   }, */
   {
     path: 'add',
-    component: AddStudentComponent
+    component: AddStudentComponent,
+    canDeactivate:[CanDeactivateGuardService]
 
     /*
     Lazy loading path define syntax. Components has to be standalone for lazy loading. Here AddStudentComponent is not standalone
